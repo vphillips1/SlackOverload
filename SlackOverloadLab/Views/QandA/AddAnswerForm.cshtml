@@ -1,0 +1,52 @@
+﻿@model Answer
+@{
+    ViewData["Title"] = "AddAnswerForm";
+}
+
+
+<form method="post" action="/qanda/AddAnswer">
+
+    @*<input type="hidden" name="questionId" value="@ViewBag.qid" />
+
+        User Name: <input type="text" name="username" /><br />
+        Detail: <input type="text" name="detail" /><br />
+        Posted: <input type="datetime" name="posted" /><br />
+        Up Votes: <input type="number" name="upvotes" /><br />*@
+    @*<input type="submit" />*@
+
+
+    <fieldset>
+
+        <legend>Add Answer</legend>
+        <input type="hidden" name="questionId" value="@ViewBag.qid" />
+        <div class="form-group">
+            UserName: <input class="form-control" type="text" name="username"  />
+
+        </div>
+        <div class="box-shadow">
+
+            Detail: <input class="form-control" type="text" name="detail" />
+           
+        </div>
+
+        <div class="form-group">
+
+            Posted: <input class="form-control" type="datetime-local" name="posted"  />
+
+        </div>
+        <div class="form-group">
+
+            Up Votes: <input class="form-control" type="number" name="upvotes" />
+
+        </div>
+
+    </fieldset>
+
+    <input type="submit" value="Add Answer" />
+
+</form>
+
+<body style=" background-color:aquamarine;">
+
+
+</body>

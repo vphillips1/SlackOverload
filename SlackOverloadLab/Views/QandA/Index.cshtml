@@ -1,0 +1,47 @@
+﻿@model List<Question>
+@{
+    ViewData["Title"] = "Index";
+}
+
+Welcome @DAL.CurrentUser!
+
+<h1>Question List Below</h1>
+<div style="font-weight:bold">Click on a Question to view and change answers for that particular question.</div>
+
+
+<a href="/qanda/addquestionform">Add Question</a>
+<br />
+
+@foreach (Question quest in Model)
+{
+
+        <h3><a href="/qanda/detail/@quest.id">@quest.category</a></h3>
+
+        <div>ID:@quest.id</div>
+        <div>User Name: @quest.username</div>
+        <div>Category:@quest.title</div>
+        <div>Details: @quest.detail</div>
+        <div>Posted:@quest.posted</div>
+        <div>Category:@quest.category</div>
+        <div>Tags:@quest.tags</div>
+        <div>Status:@quest.status</div>
+
+    
+
+    <a href="/qanda/editquestionform/@quest.id" class="btn btn-primary">Edit</a>
+    <a href="/qanda/deletequestionform/@quest.id" class="btn btn-danger">Delete</a>
+   
+
+    
+    
+
+   
+
+ }
+
+
+
+<body style=" background-color:aquamarine;">
+
+
+</body>

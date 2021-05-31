@@ -1,0 +1,82 @@
+﻿@model Question
+@{
+    ViewData["Title"] = "AddQuestionForm";
+}
+
+
+
+<form action="/qanda/addquestion" method="post">
+
+    <fieldset>
+
+        <legend>Add New Question</legend>
+
+        <div class="form-group">
+            UserName: <input class="form-control" type="text" name="username" />
+
+        </div>
+
+        <div class="form-group">
+            Title: <input class="form-control" type="text" name="title" />
+
+
+        </div>
+
+
+        <div class="form-group">
+            Detail: <input class="form-control" type="text" name="detail" />
+
+
+        </div>
+
+
+        <div class="form-group">
+            Posted: <input class="form-control" type="datetime-local" name="posted" />
+
+
+        </div>
+
+
+        @*Category:<input type="text" name="category" /><br />*@
+
+        <p>
+            @Html.LabelFor(m => m.category)
+            <select asp-for="category">
+                <option>C#</option>
+                <option>CSS</option>
+                <option>HTML</option>
+                <option>Java</option>
+                <option>JavaScript</option>
+                <option> SQL</option>
+                <option>Other</option>
+            </select>
+
+        </p>
+
+        <div class="form-group">
+            Tags: <input class="form-control" type="text" name="tags" />
+
+
+        </div>
+
+
+
+        <div class="form-group">
+            Status: <input class="form-control" type="number" name="status" />
+
+
+        </div>
+
+
+
+
+    </fieldset>
+
+    <input type="submit" value="Add Question" />
+
+</form>
+
+<body style=" background-color:aquamarine;">
+
+
+</body>

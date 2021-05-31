@@ -1,0 +1,34 @@
+﻿@model List<Answer>
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h1>Answers</h1>
+
+There are @Model.Count answer(s) in @ViewBag.quest.category.
+
+@foreach (Answer answer in Model)
+{
+
+
+    <div> ID: @answer.id</div>
+    <div>Username: @answer.username</div>
+    <div>Detail: @answer.detail</div>
+    <div>Posted: @answer.posted</div>
+    <div>Up Votes: @answer.upvotes</div>
+
+    if (answer.username == DAL.CurrentUser || DAL.CurrentUser.ToLower() == "admin" || ViewBag.quest.username == DAL.CurrentUser)
+    {
+        <div><a href="/qanda/DeleteAnswerForm?question=@answer.questionId&answer=@answer.id" class="btn btn-danger">Delete</a></div>
+        <div><a href="/qanda/EditAnswerForm" class="btn btn-primary">Edit</a></div>
+        <br/><br/>
+    }
+
+}
+
+<a href="/qanda/AddAnswerForm/@ViewBag.quest.id" class=" btn btn-primary">Add Answer</a>
+
+<body style=" background-color:aquamarine;">
+
+
+</body>
